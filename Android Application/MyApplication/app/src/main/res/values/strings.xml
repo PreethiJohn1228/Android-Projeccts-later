@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Address Book</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="Add_New">Add</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="title_activity_display_contact">Display</string>
+    <string name="email">AUTHOR</string>
+    <string name="name">TITLE</string>
+    <string name="phone">BOOK ID</string>
+    <string name="street">PRICE</string>
+    <string name="country">RETURN DATE</string>
+    <string name="save">Save</string>
+    <string name="deleteContact">Are you sure, you want to delete it.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>

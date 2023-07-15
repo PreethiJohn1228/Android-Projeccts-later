@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+@model MVCDemoProject.Models.LoginModel
+@using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "loginForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Username)
+        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", pattern = @"^[a-zA-Z_]+$", title = "Characters only" })
+        
+        @Html.ValidationMessageFor(m => m.Username)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", pattern = @"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$", title = "Password must contain at least 6 characters including 1 uppercase letter, 1 lowercase letter, and 1 digit" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        
+
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", pattern = @"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$", title = "Enter a valid email address" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
